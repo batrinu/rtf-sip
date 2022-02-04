@@ -62,23 +62,15 @@ function Tv({ ready, ...props }) {
       <mesh castShadow receiveShadow geometry={nodes.body.geometry} material={nodes.body.material} />
       <mesh scale={[-1, 1, 1]} position={[-43.65, 161.61, 131.29]} geometry={nodes.screen.geometry}>
         <meshPhysicalMaterial clearcoat={1} clearcoatRoughness={0} toneMapped={false}>
-          {/* <videoTexture
-            attach="map"
-            args={[video]}
-            flipY={false}
-            repeat={[5, 9]}
-            offset={[-0.1, 0]}
-            wrapT={THREE.RepeatWrapping}
-            wrapS={THREE.RepeatWrapping}
-            encoding={THREE.sRGBEncoding}
-          /> */}
-          <Html prepend center transform position={[-0.32, 0.62, 0.9]} distanceFactor={1}>
-            <iframe
-              width="320"
-              height="240"
-              src="https://www.youtube.com/embed/videoseries?list=PLR5vUECXXtBugSljG3e5DsI0-LdNOJdWA"
-              title="YouTube video player"></iframe>
-          </Html>
+          {ready && (
+            <Html prepend center transform position={[-0.32, 0.62, 0.9]} distanceFactor={1}>
+              <iframe
+                width="320"
+                height="240"
+                src="https://www.youtube.com/embed/videoseries?list=PLR5vUECXXtBugSljG3e5DsI0-LdNOJdWA"
+                title="Strada in palma"></iframe>
+            </Html>
+          )}
         </meshPhysicalMaterial>
       </mesh>
     </group>
